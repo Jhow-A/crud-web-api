@@ -19,6 +19,9 @@ namespace CrudWebApi
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            // Registrar a basic authentication através da aplicação inteira
+            config.Filters.Add(new Models.BasicAuthenticationAttribute());
         }
     }
 }
